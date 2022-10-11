@@ -8,19 +8,7 @@ import Paseadores from "./Paseadores";
 import Contratar from "./Contratar";
 
 function App() {
-  const url2 = "https://apirest-streetpaws.herokuapp.com/api/users";
-  const [todos, setTodos] = useState();
-
-  const fetchApi = async () => {
-    const response = await fetch(url2);
-    const responseJSON = await response.json();
-    setTodos(responseJSON);
-  };
-
-  useEffect(() => {
-    fetchApi();
-  }, []);
-
+  
   return (
     <div>
       <Contactos></Contactos>
