@@ -33,7 +33,7 @@ function Paseadores() {
                       <Card
                         imageSource={image1}
                         nameC={todo.name}
-                        url={"/contratar"}
+                        url="/contratar"
                         text={todo.puntaje}
                       />
                     </div>

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Card from "./components/Card";
-import image1 from "./assets/1.jpg";
 import Contactos from "./Contactos";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Paseadores from "./Paseadores";
