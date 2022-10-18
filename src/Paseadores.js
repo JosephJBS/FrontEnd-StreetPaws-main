@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "./components/Card";
 import image1 from "./assets/1.jpg";
+import Contratar from "./Contratar";
 
 
 function Paseadores() {
@@ -33,8 +34,8 @@ function Paseadores() {
                       <Card
                         imageSource={image1}
                         nameC={todo.name}
-                        url="/contratar"
                         text={todo.puntaje}
+                        id={todo._id}
                       />
                     </div>
                   ))}

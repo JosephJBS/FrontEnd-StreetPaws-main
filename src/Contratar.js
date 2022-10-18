@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
+import {useLocation} from 'react-router-dom';
 import "./css/profile_contrato.css";
 import image1 from "./assets/1.jpg";
 import image2 from "./assets/contrato.jpg";
 
 function Contratar() {
+  const location = useLocation();
+
   var id_ejemplo = "62aa7d42959a6bde1d556a7a";
-  var id_ejemplop = "62a36b1b651d0057a427d486";
+  var id_ejemplop = location.state.userId;
 
   const url3 = "https://apirest-streetpaws.herokuapp.com/api/owners";
   const [filtro, setFiltro] = useState();
