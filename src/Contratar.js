@@ -10,10 +10,10 @@ function Contratar() {
   var id_ejemplo = "62aa7d42959a6bde1d556a7a";
   var id_ejemplop = location.state.userId;
 
-  const url3 = "https://apirest-streetpaws.herokuapp.com/api/owners";
+  const url3 = "https://streetpaws-backend.herokuapp.com/api/owners";
   const [filtro, setFiltro] = useState();
 
-  const url2 = "https://apirest-streetpaws.herokuapp.com/api/Users";
+  const url2 = "https://streetpaws-backend.herokuapp.com/api/Users";
   const [paseadores, setPaseador] = useState();
 
   const fetchApi = async () => {

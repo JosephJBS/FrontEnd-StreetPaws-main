@@ -5,7 +5,7 @@ import Contratar from "./Contratar";
 
 
 function Paseadores() {
-  const url2 = "https://apirest-streetpaws.herokuapp.com/api/users";
+  const url2 = "https://streetpaws-backend.herokuapp.com/api/users";
   const [todos, setTodos] = useState();
 
   const fetchApi = async () => {
