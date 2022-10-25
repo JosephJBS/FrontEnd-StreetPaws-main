@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./css/profile_contrato.css";
 import image1 from "./assets/1.jpg";
 import image2 from "./assets/contrato.jpg";
+import swal from 'sweetalert';
 
 function Contratar() {
   const location = useLocation();
@@ -32,6 +33,16 @@ function Contratar() {
     fetchApi();
   }, []);
 
+  const showAlert =()=>{
+    swal({
+      title: "Contratación exitosa",
+      text : "(>‿◠)✌",
+      icon: "success",
+      button : "Aceptar"
+    }).then(function(){
+      window.location = "/";
+    })
+  }
   return (
     <div>
       <div className="container mt-4 mb-4 p-3 d-flex justify-content-center">
@@ -84,9 +95,7 @@ function Contratar() {
                       estado: "true",
                     }),
                   });
-                  
-                  nav("/")
-
+                  showAlert()
                 }}
               >
                 Contratar
