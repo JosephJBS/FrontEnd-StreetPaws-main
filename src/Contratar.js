@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./css/profile_contrato.css";
 import image1 from "./assets/1.jpg";
 import image2 from "./assets/contrato.jpg";
@@ -7,10 +7,10 @@ import swal from 'sweetalert';
 
 function Contratar() {
   const location = useLocation();
-  const nav = useNavigate();
 
-  var id_ejemplo = "62aa7d42959a6bde1d556a7a";
-  var id_ejemplop = location.state.userId;
+  var id_dueñoct = "62aa7d42959a6bde1d556a7a";
+  var id_paseadorct = location.state.userId;
+  var id_mascotact = "62aa7d42959a6bde1d556a7b";
 
   const url3 = "https://streetpaws-backend.herokuapp.com/api/owners";
   const [filtro, setFiltro] = useState();
@@ -25,8 +25,8 @@ function Contratar() {
     const responsep = await fetch(url2);
     const responseJSONp = await responsep.json();
 
-    setFiltro(responseJSON.filter((i) => i._id === id_ejemplo));
-    setPaseador(responseJSONp.filter((i) => i._id === id_ejemplop));
+    setFiltro(responseJSON.filter((i) => i._id === id_dueñoct));
+    setPaseador(responseJSONp.filter((i) => i._id === id_paseadorct));
   };
 
   useEffect(() => {
@@ -90,8 +90,8 @@ function Contratar() {
                       "Content-Type": "application/json",
                     },
                     body: JSON.stringify({
-                      id_dogwalker: location.state.userId,
-                      id_dog: "62aa7d42959a6bde1d556a7b",
+                      id_dogwalker: id_paseadorct,
+                      id_dog: id_mascotact,
                       estado: "true",
                     }),
                   });
