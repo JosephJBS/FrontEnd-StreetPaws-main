@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import {useLocation} from 'react-router-dom';
+import { useLocation, useNavigate } from "react-router-dom";
 import "./css/profile_contrato.css";
 import image1 from "./assets/1.jpg";
 import image2 from "./assets/contrato.jpg";
 
 function Contratar() {
   const location = useLocation();
+  const nav = useNavigate();
 
   var id_ejemplo = "62aa7d42959a6bde1d556a7a";
   var id_ejemplop = location.state.userId;
@@ -69,7 +70,27 @@ function Contratar() {
           <div>
             <img src={image2} height={100} width={100} />
             <div className=" d-flex mt-2">
-              <button className="btn1 btn-dark">Contratar</button>
+              <button
+                className="btn1 btn-dark"
+                onClick={() => {
+                  fetch("https://streetpaws-backend.herokuapp.com/api/transaction", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      id_dogwalker: location.state.userId,
+                      id_dog: "62aa7d42959a6bde1d556a7b",
+                      estado: "true",
+                    }),
+                  });
+                  
+                  nav("/")
+
+                }}
+              >
+                Contratar
+              </button>
             </div>
             <div className=" d-flex mt-2">
               <a href="/paseadores">
