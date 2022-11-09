@@ -4,6 +4,7 @@ import "./css/profile_contrato.css";
 import image1 from "./assets/1.jpg";
 import image2 from "./assets/contrato.jpg";
 import swal from 'sweetalert';
+import Contactos from "./Contactos";
 
 function Contratar() {
   const location = useLocation();
@@ -45,6 +46,7 @@ function Contratar() {
   }
   return (
     <div>
+      <Contactos></Contactos>
       <div className="container mt-4 mb-4 p-3 d-flex justify-content-center">
         <div className="card2 p-4">
           <div className=" image d-flex flex-column justify-content-center align-items-center">

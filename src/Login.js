@@ -15,15 +15,15 @@ function Login() {
           icon: "success",
           button : "Aceptar"
         }).then(function(){
-          window.location = "./contratar";
+          window.location = "./paseadores";
         })
       }
 
   return (
-    <Router>
+
     <div className="fondo">
         <div className="containerPrincipal">
-        <h1>STREETPASS</h1>
+        <h1>STREETPAWS</h1>
         <br/>
         <div className="containerSecundario">
             <div className="form-group">
@@ -48,20 +48,22 @@ function Login() {
                       password: document.querySelector("#Pass").value,
                     }),
                   });
+                  
                   showAlert();
                 }}
               >
                 Iniciar Sesion
               </button>
             <br/> <br/> 
-            <label>¿No tiene una cuenta? <Link to="/Registrar">Crear aqui</Link></label>
+            <label>¿No tiene una cuenta?</label>
+            
             </div>
         </div>
         </div>
 
     </div>
 
-    </Router>
+
   );
 }
 

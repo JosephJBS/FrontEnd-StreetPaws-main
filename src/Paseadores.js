@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "./components/Card";
 import image1 from "./assets/1.jpg";
 import Contratar from "./Contratar";
+import Contactos from "./Contactos";
 
 
 function Paseadores() {
@@ -19,7 +20,9 @@ function Paseadores() {
   }, []);
 
   return (
+    
     <div>
+      <Contactos></Contactos>
       <section className="App">
         <div class="App">
           <div class="title">

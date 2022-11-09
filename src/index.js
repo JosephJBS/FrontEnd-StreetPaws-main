@@ -10,7 +10,7 @@ import "animate.css/animate.min.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login /> 
+    <App></App>
   </React.StrictMode>,
   document.getElementById("root")
 );
