@@ -1,12 +1,9 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
+
 import "./card.css";
 
-
-function Card({ imageSource, nameC, text, id }) {
-  const nav = useNavigate();
-
+function Card({ imageSource, nameC, text, url }) {
   return (
     <div className="card">
       <div class="head">
@@ -26,16 +23,16 @@ function Card({ imageSource, nameC, text, id }) {
       </div>
 
       <div class="contact">
-        <button 
-        className="btn"
-        rel="noreferrer"
-        onClick={() => {
-          nav("/contratar",{state:{userId : id}})
-        }}>
-        Contactar con {nameC}
-        </button>    
+        <a
+          href={url ? url : "#!"}
+          target="_blank"
+          className="btn"
+          rel="noreferrer"
+        >
+          Contactar con {nameC}
+        </a>
       </div>
-
+      
     </div>
   );
 }
