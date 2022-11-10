@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Card from "./components/Card";
 import image1 from "./assets/1.jpg";
+import Contratar from "./Contratar";
 
 
 function Paseadores() {
-  const url2 = "https://apirest-streetpaws.herokuapp.com/api/users";
+  const url2 = "https://streetpaws-backend.herokuapp.com/api/users";
   const [todos, setTodos] = useState();
 
   const fetchApi = async () => {
@@ -33,8 +34,8 @@ function Paseadores() {
                       <Card
                         imageSource={image1}
                         nameC={todo.name}
-                        url={"/contratar"}
                         text={todo.puntaje}
+                        id={todo._id}
                       />
                     </div>
                   ))}
