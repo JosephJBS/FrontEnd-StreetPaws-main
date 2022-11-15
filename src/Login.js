@@ -38,7 +38,7 @@ function Login() {
             <button
                 className="btn btn-primary"
                 onClick={() => {
-                  fetch("https://streetpaws-backend.herokuapp.com/api/owner", {
+                  fetch("https://streetpaws-backend.herokuapp.com/api/login", {
                     method: "POST",
                     headers: {
                       "Content-Type": "application/json",
@@ -56,7 +56,7 @@ function Login() {
               </button>
             <br/> <br/> 
             <label>¿No tiene una cuenta?</label>
-            
+            <a href="/Registrar">Crear Aqui</a>
             </div>
         </div>
         </div>

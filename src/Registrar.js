@@ -4,6 +4,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import swal from 'sweetalert';
 
 function Registrar() {
+  const showAlert =()=>{
+    swal({
+      title: "USUARIO REGISTRADO",
+      text : "(>‿◠)✌",
+      icon: "success",
+      button : "Aceptar"
+    }).then(function(){
+      window.location = "./login";
+    })
+  }
+
   return (
     <div className="fondo">
         <div className="containerPrincipal">
@@ -19,6 +30,10 @@ function Registrar() {
             <br/>
             <input type="text" className="form-control" id="dni"/>
             <br/>
+            <label>Direccion</label>
+            <br/>
+            <input type="text" className="form-control" id="address"/>
+            <br/>
             <label>Email</label>
             <br/>
             <input type="text" className="form-control"id="email"/>
@@ -30,7 +45,7 @@ function Registrar() {
             <button
                 className="btn btn-primary"
                 onClick={() => {
-                  fetch("https://streetpaws-backend.herokuapp.com/api/owner", {
+                  fetch("https://streetpaws-backend.herokuapp.com/api/registro", {
                     method: "POST",
                     headers: {
                       "Content-Type": "application/json",
@@ -38,11 +53,12 @@ function Registrar() {
                     body: JSON.stringify({
                       name: document.querySelector("#name").value,
                       dni: document.querySelector("#dni").value,
+                      address: document.querySelector("#address").value,
                       email: document.querySelector("#email").value,
                       password: document.querySelector("#password").value,
                     }),
                   });
-
+                  showAlert();
                 }}
               >
                 Registrarse
